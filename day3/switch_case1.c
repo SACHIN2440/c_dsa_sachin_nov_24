@@ -41,7 +41,7 @@ int main()
                 puts("Guntur delicious Chicken Maam");
                 break;
             case 3:
-                puts("Your spicy fish fry Maam");
+                puts("Your spicy fish fry Maam");;
                 break;
             default:
                 puts("We dont serve Lizards Maam");
