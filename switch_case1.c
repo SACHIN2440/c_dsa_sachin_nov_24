@@ -8,8 +8,8 @@ int main()
     do
     {
         puts("V:Veg N:Nonveg, Your choice plz: ");
-        scanf("%c", &foodType);
-    
+        foodType = getc(stdin);
+        getchar();
         foodType = tolower(foodType);
         switch (foodType)
         {
@@ -55,7 +55,7 @@ int main()
         }
         puts("Do you wish to have more? 1:Yes 2:No");
         scanf("%d", &choice);
-    } while (choice != 1);
+    } while (choice != 2);
     puts("Thank you Visit again");
     return 0;
 }
