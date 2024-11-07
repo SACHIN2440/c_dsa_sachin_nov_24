@@ -51,5 +51,5 @@ int main()
         scanf("%d", &choice);
     } while (choice != 1);
     puts("Thank you Visit again");
-    return 0;;
+    return 0;
 }

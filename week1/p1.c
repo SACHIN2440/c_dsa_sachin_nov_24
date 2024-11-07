@@ -1,16 +1,26 @@
 #include <stdio.h>
-int main()
+#include <stdlib.h>
+
+long long int findFactorial(short int num)
 {
-    int inputNumber = 0, remainderDigit = 0, sumOfDigits = 0, tempNumber = 0;
-    puts("Enter a number (+ve integer) to find sum of its digits");
-    scanf("%d", &inputNumber);
-    tempNumber = inputNumber;
-    while (inputNumber > 0)
-    {
-        remainderDigit = inputNumber % 10;
-        sumOfDigits += remainderDigit;
-        inputNumber = inputNumber / 10;
-    }
-    printf("Sum of digits of %d is %d", tempNumber, sumOfDigits);
-    return 0;
+    if (num == 1 || num == 0)
+        return 1;
+    return num * findFactorial(num - 1);
+}
+
+long long int findFactorial1(short int num)
+{
+    if (num == 0 || num == 1)
+        return 1;
+    long long int factorialNum = 1;
+    for (int i = 2; i <= num; i++)
+        factorialNum = factorialNum * i;
+    return factorialNum;
+}
+
+int main(int argCount, char *args[])
+{
+    short int inputNum = atoi(args[1]);
+    long long int factorialNum = findFactorial(inputNum);
+    printf("Factorial of %d is %lld", inputNum, factorialNum);
 }

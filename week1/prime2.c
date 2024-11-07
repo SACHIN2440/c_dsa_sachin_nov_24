@@ -26,5 +26,5 @@ int main()
         if (checkPrime(i) == 1)
             printf("%-5d", i);
     }
-    return 0; 
+    return 0;
 }

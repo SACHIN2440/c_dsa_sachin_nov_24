@@ -293,6 +293,7 @@ Find the 2nd smallest digit in a number.
 14.Find sum of Odd placed Even digits in the number
 15.Find 2nd smallest digit in the number
 16.Accept a number from user and find her lucky digit, where the lucky digit is found by finding sum of the digits of the number until a sigle digit number is reached. Thus if the sum is not a single digit number, apply the logic of finding sum of the digits on it.
+17. Find sum of Odd placed Even digits.
 
 HOW TO SOLVE A PROBLEM
 
@@ -369,3 +370,216 @@ int main() {
 	printf("Sum of digits of %d is %d", tempNumber, sumOfDigits);
 	return 0;
 }
+---------------------------------------------
+DAY3 WEDNESDAY 06-11-2024
+
+int num = 35;
+int age = 35;
+int personAge = 35;
+
+int studentAge = 35;
+
+Object:
+int studentAge = 35;
+int minAge = 18;
+int maxAge = 80;
+string unit = "years";
+
+18
+80
+-------------------------------------------------------------
+int biscuitPrices[10];
+
+myFunction(biscuitPrices, 10);
+
+#include <stdio.h>
+int main()
+{
+    int x = -4, y = 1, z = 9;
+    if (y >= --x || x != ++z)
+    {
+        puts("Mysuru");
+    }
+    else
+    {
+        puts("Bengaluru");
+    }
+    printf("%d  %d  %d", x, y, z); // -5 1 9   -3 1 9
+}
+----------------------------------------
+#include <stdio.h>
+int main()
+{
+    int x = -4, y = 1, z = 9;
+    x++;
+    printf("%d  %d  %d \n", x, y, z); // -3 1 9
+    ++x;
+    printf("%d  %d  %d \n", x, y, z); // -2 1 9
+    y = z--;
+    printf("%d  %d  %d \n", x, y, z); // -2 9 8
+    z = ++x;
+    printf("%d  %d  %d \n", x, y, z); // -1 9 -1
+    x = y++ - ++y;
+    //  9   - 11
+    printf("%d  %d  %d \n", x, y, z); // -2 11 -1
+}
+-----------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int x = 11, y = 3, z = 19;
+    if (z-- >= --x | y++ == x && z != y)
+        puts("Sarakki");
+    else
+        puts("Silk Board");
+    printf("%d  %d  %d \n", x, y, z); // 10 4 18
+}
+---------------------------------------
+#include <stdio.h>
+int main()
+{
+    int choice = 0;
+    puts("Welcome to Madurai Cafe");
+    puts("1:Banne-Dosa 2:Upma 3:Rava-idli \nYour choice? ");
+    scanf("%d", &choice);
+    switch (choice)
+    {
+    case 1:
+        puts("Your Tasty dosa Sir");
+        break;
+    case 2:
+        puts("Your yummy upma Maam");
+        break;
+    case 3:
+        puts("Your delicious idli Sir");
+        break;
+    default:
+        puts("This is not garden Sir");
+    }
+    puts("Thank you Visit again");
+    return 0;
+}
+------------------------------
+Check if a number is Prime
+Print the Prime numbers between m and n (m < n)
+Print the Nth Prime number
+
+Print the Nth term of the series: 1 2 2 3 3 5 5 7 8 11 13 13
+Odd terms:  1   2   3   5   8   13 (N/2+1)th term
+Even Terms: 2   3   5   7   11  13 n/2th term
+
+Print Fibo series of N terms
+Print Nth Fibo term
+Check if a number is Prime
+Find Nth Prime number
+-------------------------------------
+DAY4 THURSDAY 07-01-2024
+
+Below link is: 
+How To Keep Applications Organised In Your Computer
+https://www.youtube.com/watch?v=SY1UNqOwabo
+
+How To Sync Files Between GitHub And folder in our laptop
+https://www.youtube.com/watch?v=EWttNzNBqBc
+
+How To Use GitHub And Create New Repository
+https://www.youtube.com/watch?v=h5Xr9_L4x7M
+
+App Installations for learning Web App Development and GitHub
+https://www.youtube.com/watch?v=B3s3WT-05H0&t=49s
+----------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int num1 = 10, num2 = 20, num3 = 15, smallestNumber = 0;
+
+    smallestNumber = (num1 < num2) ? num1 : num2;
+    printf("Smallest among num1 and num2 is %d \n", smallestNumber);
+
+    smallestNumber = (num1 < num2 && num1 < num3) ? num1 : (num2 < num3) ? num2
+                                                                         : num3;
+    printf("Smallest among the three numbers is %d \n", smallestNumber);
+    return 0;
+}
+--------------------------------------------------
+TYPE CASTING:
+int num = 17/2;
+printf("%d  %f", num, num); // 8  *
+
+float num = 17/2;
+printf("%d  %f", num, num); // 0  8.5
+
+int num = (float)(17.0 / 2);
+printf("%d  %f", num, num);  // 8  0
+
+float num = (double) ((int) 17.5 / 3);
+
+--------------------------------------------------
+POINTERS:
+
+Unary & "address of" opr.
+It can be applied only to a variable, including pointers (because pointers are also variables). When we apply & to a variable, we get its address.
+
+Unary * "value at" OR "de-referencing" opr
+It can be applied only to an address including pointers (because pointers hold address). When we apply * to an address, we get value present in that address, this is called as derefrencing the address.
+
+Pointers videos:
+https://www.youtube.com/@outstanding20mysuru9
+-----------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    double d = 5.55;
+    double *dptr = NULL;
+    dptr = &d;
+    printf("Value of d = %lf \n", d);
+    printf("Value of d = %lf \n", *(&d));
+    printf("Address of d = %p   %u \n", &d, &d);
+    printf("Address of d = %p   %u \n", dptr, dptr);
+    printf("Value of dptr = %p \n", dptr);
+    printf("Value of dptr = %p \n", *(&dptr));
+    printf("Value of dptr = %p \n", &d);
+    printf("Value of d = %lf \n", *dptr);
+    printf("Address of dptr = %u \n", &dptr);
+}
+------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    double d = 5.55;
+    double *dptr = NULL;
+    dptr = &d;
+    double **pp = &dptr;
+    printf("Value of pp = %p  %u \n", pp, pp);
+    printf("Address of pp = %p  %u \n", &pp, &pp);
+    printf("Value of dptr = %p   %u \n", *pp, *pp);
+    printf("Address of dptr = %p   %u \n", pp, pp);
+    printf("Value of d = %lf \n", **pp);
+    printf("Address of d = %p   %u \n", *pp, *pp);
+    printf("Value of d = %lf \n", ***(&pp));
+}
+/*
+print value of d in a longest possible way
+***(&pp)
+value at[value at[value at[address of pp]]]
+v at[v at[v at[9301]]]
+v at[v at[5501]]
+v at[2101]
+4.5
+= d
+*/
+--------------------------------------------------
+Garbage Value 
+default value
+empty value
+int main() {
+	int num;
+	float *ptr; // WILD Pointer
+	*ptr = some value;
+}
+---------------------------------
+Memory Management of a program
+
+
