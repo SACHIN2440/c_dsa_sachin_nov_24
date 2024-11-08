@@ -581,5 +581,196 @@ int main() {
 }
 ---------------------------------
 Memory Management of a program
+Memory Management of a program
+Different stages of a program
+Function Call Stack (How functions work implicitly)
+
+Special purpose registers:
+IR: instruction register:
+It hold address of current instruction that is running
+PC: program counter
+It holds address of next instruction to be executed
+FP: Frame Pointer
+It holds address of the frame of the function that is currently running.
+FRame: Memory allocated to a function
+SP: Stack pointer
+It points to the top frame in the Stack
+
+Contents of a Frame:
+1. local variables declared inside the function
+2. function parameters
+3. Linkages (addresses of the called function/callees)
+4. Return address (RA). The address of instruction to which the control should come back.
+
+void decimalToBinary(int);
+int main(int argCount, char* args[]) {
+	int n = atoi(args[1]);
+	printf("The Binary equivalent of %d is:  ", n);
+	decimalToBinary(n); // call by value
+}
+
+void decimalToBinary(int num) {
+	if (num == 0) {
+		return;
+	}
+	decimalToBinary(num / 2);
+	printf("%d", num % 2);
+}
+-----------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+long long int findFactorial(short int num)
+{
+    if (num == 1 || num == 0)
+        return 1;
+    return num * findFactorial(num - 1);
+}
+
+long long int findFactorial1(short int num)
+{
+    if (num == 0 || num == 1)
+        return 1;
+    long long int factorialNum = 1;
+    for (int i = 2; i <= num; i++)
+        factorialNum = factorialNum * i;
+    return factorialNum;
+}
+
+int main(int argCount, char *args[])
+{
+    short int inputNum = atoi(args[1]);
+    long long int factorialNum = findFactorial(inputNum);
+    printf("Factorial of %d is %lld", inputNum, factorialNum);
+}
+--------------------------------------------
+DAY5 FRIDAY 08-11-2024
+
+bit wise operators:
+int main() {
+	short int num1 = 10, num2 = 19, result = 0;
+	result = num1 & num2;
+	printf("And Result = %d \n", result);
+	result = num1 | num2;
+	printf("Or Result = %d \n", result);
+	result = num1 ^ num2;
+	printf("Xor Result = %d \n", result);
+	result = ~num1;
+	printf("Compliment Result = %d \n", result);
+	result = num1 << 2;
+	printf(" Result = %d \n", result);
+	result = num1 >> 2;
+	printf(" Result = %d \n", result);
+}
+
+num1 = 10
+num2 = 19
+
+0000 1010  num1
+0001 0011  num2
+
+0000 0010  &   2
+
+0001 1011  |   27
+
+0001 1001  ^   25
+
+1111 0101  ~   -128 + 64 + 32 +16 +5 = -64+53 = -11
+
+0010 1000  40
+0000 0010  2
+------------------------------------------------
+#include <stdio.h>
+int main()
+
+    // short int num1 = 10, num2 = 19, result = 0;
+    int num1 = 0x7e;
+    int num2 = 89;
+    int num3 = 073;
+    printf("%d   %i    %o   %x \n", num1, num1, num1, num1);
+    printf("%d   %i    %o   %X \n", num2, num2, num2, num2);
+    printf("%d   %i    %o   %x \n", num3, num3, num3, num3);
+}
+-------------------------------------------------------
+ARRAYS:
+
+int as1, as2.......as 5000 times;
+
+int averageScores[5000];
+
+> In an array all the elements will be of the same DT
+> The array size is fixed at its creation (declaration) and it cannot modified later.
+> An Array is memory inefficient DS
+> Time taken to access (look-up) any element in an array is same and it is O(1) (one unit time). And hence Array is time efficient DS.
+> An Array is implemented using pointer and pointer arithmetic
+> An array is a DS because all of its elements stored in contigious memory locations.
+
+HOW ARRAY IS IMPLEMENTED:
+
+float arr[5] {0.0f};
+arr[0]  the 1st element
+arr[2] the 3rd element
+
+arr[2] will re-writeen by compiler as *(arr + 2)
+So, the name of the array is always an address.
+It is the address of 1st element in the array
+-----------------------------------------------------
+// Program to find smallest and biggest elements of the array
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argCount, char *args[])
+{
+    float numbers[10] = {0.0f};
+    float smallestNumber = 0.0f, biggestNumber = 0.0f;
+    printf("User given %d numbers are \n", argCount - 1);
+    for (int i = 1; i < argCount; i++)
+    {
+        numbers[i - 1] = atof(args[i]);
+        printf("%-6.2f", numbers[i - 1]);
+    }
+    smallestNumber = biggestNumber = numbers[0];
+    for (size_t i = 0; i < argCount - 1; i++)
+    {
+        if (smallestNumber > numbers[i])
+            smallestNumber = numbers[i];
+        if (biggestNumber < numbers[i])
+            biggestNumber = numbers[i];
+    }
+    printf("\nSmallest number = %.2f, Biggest number is %.2f", smallestNumber, biggestNumber);
+}
+---------------------------------------------------------
+Assignments:
+
+1. Find frequency of a number in an array
+1. Remove duplicates from an array
+
+STRINGS:
+
+string handling functions
+string.h
+
+int strlen(const char*);
+
+int strLen(const char* ptr) {
+}
+
+int strLen(const char ptr[]) {
+}
+
+int strLen(const char ptr[10]) {
+}
+
+char* strcpy(char*, const char*)
+
+char* strcat(char*, const char*)
+
+int strcmp(const char*, const char*)
+
+int stricmp(const char*, const char*)
+
+char* strrev(char*)
+
+strstr()
+strtok()
 
 
