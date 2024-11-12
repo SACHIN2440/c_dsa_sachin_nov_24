@@ -21,7 +21,7 @@ int main()
     puts("Enter values for M and N (M < N)");
     scanf("%d%d", &m, &n);
     printf("Prime numbers between %d and %d are \n", m, n);
-    for (int i = m; i <= n; i++)
+    for (int i = m; i <= n; i++)                            
     {
         if (checkPrime(i) == 1)
             printf("%-5d", i);
